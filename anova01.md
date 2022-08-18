@@ -1,0 +1,67 @@
+ANOVA with Random Effects
+================
+
+# Topics of Interest
+
+-   review of one-way analysis of variance (ANOVA)
+
+-   matrix formulation of the ANOVA model
+
+-   contrast estimation
+
+-   coding schemes
+
+-   interaction among variables
+
+# Resources
+
+-   Hoff Chapters 2-4
+
+-   Gelman and Hill Chapter 22
+
+[RStanARM
+documentation](https://mc-stan.org/users/documentation/case-studies/tutorial_rstanarm.html)
+
+[Goldstein and Spiegelhalter paper on
+rankings](https://www.bristol.ac.uk/media-library/sites/cmm/migrated/documents/statistical-issues-for-league-tables1.pdf)
+
+[Matrix
+definitions](https://onlinecourses.science.psu.edu/statprogram/reviews/matrix-algebra/definitions)
+
+[Code for the radon analysis as presented in Gelman and
+Hill](http://www.stat.columbia.edu/~gelman/arm/examples/radon/radon_chap12.R)
+
+[An introduction to Bayesian MLM using
+BRMS](https://www.barelysignificant.com/pdf/2018_Nalborczyk_etal_preprint.pdf)
+
+[Extracting and visualizing tidy draws from BRMS
+models](https://mjskay.github.io/tidybayes/articles/tidy-brms.html)
+
+# Slides
+
+[Introduction](decks/intro_deck.html)
+
+[The ANOVA Model: Matrix Formulation](decks/anova_01_deck.html)
+
+[Contrast Estimation and Interaction](decks/anova_02_deck.html)
+
+[Random Effects ANOVA](decks/anova_03_deck.html)
+
+[Introduction to Bayesian Inference for the Hierarchical Normal
+Model](decks/anova_04_deck.html)
+
+[Priors for Group-Level Variance](decks/anova_05_deck.html)
+
+[Random Effects ANCOVA](decks/ancova_01_deck.html)
+
+# Labs
+
+[Lab 1](labs/lab1.html)
+
+[Labs 2-3](labs/lab2.html)
+
+# Homework
+
+[Assignment 1](homework/hw1.html)
+
+[Assignment 2](homework/hw2.html)

@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>STA 410/610: Multilevel and Hierarchical Models</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
-
-
-
 <style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -64,10 +58,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -84,40 +74,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 45px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h2 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h3 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h4 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h5 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h6 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -145,7 +111,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -157,7 +123,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -168,10 +134,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -183,7 +162,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -219,6 +197,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -247,6 +226,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -302,7 +287,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -316,7 +301,7 @@ div.tocify {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -351,29 +336,35 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
+<h1 class="title toc-ignore">STA 410/610: Multilevel and Hierarchical
+Models</h1>
 
 </div>
 
 
-<div id="welcome-to-sta610" class="section level1">
-<h1>Welcome to STA610</h1>
+<p>#Welcome to STA410/610!</p>
 <div id="class-meetings" class="section level3">
 <h3>Class Meetings</h3>
-<p><font color="#6CA0DC"><i class="fas fa-university fa-lg"></i></font>   Old Chem 116</p>
-<p><font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font>   MWF 1:45 - 3:00 (usually Fridays will be labs)</p>
+<p><font color="#6CA0DC"><i class="fas fa-university fa-lg"></i></font>
+  Old Chem 116</p>
+<p><font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font>
+  MWF 11:45 - 1:00 (usually Mondays will be labs, but sometimes lab and
+lecture will be swapped)</p>
 </div>
 <div id="teaching-team-and-office-hours" class="section level3">
 <h3>Teaching team and office hours</h3>
-<p>Note: office hours may vary due to travel and other commitments.</p>
-<table style="width:75%;">
+<p>Note: office hours may vary due to travel and other commitments.
+Revisions to office hours will be noted via e-mail and on my office
+door.</p>
+<table>
 <colgroup>
-<col width="15%" />
-<col width="52%" />
-<col width="6%" />
+<col width="19%" />
+<col width="72%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -384,46 +375,60 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://scholars.duke.edu/person/dunson">Professor David Dunson</a> <a href="mailto:dunson@duke.edu" title="email"><i class="fa fa-envelope"></i></a>  </td>
-<td>TBD</td>
-<td>218 Old Chemistry</td>
+<td><a href="https://stat.duke.edu/people/amy-h-herring">Professor Amy
+Herring</a>
+<a href="mailto:amy.herring@duke.edu" title="email"><i class="fa fa-envelope"></i></a>
+ </td>
+<td>Wednesday and Thursday 1:45-2:45pm</td>
+<td>208 Old Chemistry</td>
 </tr>
 <tr class="even">
-<td><a href="https://shounakchattopadhyay.github.io">TA Shounak Chattapadhyay</a> <a href="mailto:shounak.chattopadhyay@duke.edu" title="email"><i class="fa fa-envelope"></i></a>  </td>
-<td>TBD</td>
-<td>214 Old Chemistry</td>
+<td><a href="https://stat.duke.edu/people/xu-chen">TA Xu Chen</a>
+<a href="mailto:xu.chen2@duke.edu" title="email"><i class="fa fa-envelope"></i></a>
+ </td>
+<td>Friday 1:30-3:30</td>
+<td>203B Old Chemistry</td>
 </tr>
 <tr class="odd">
-<td><a href="https://scholars.duke.edu/person/patrick.leblanc">TA Patrick LeBlanc</a> <a href="mailto:patrick.leblanc@duke.edu" title="email"><i class="fa fa-envelope"></i></a>  </td>
-<td>TBD</td>
-<td> Old Chemistry</td>
-</tr>  
-<tr class="odd">
-<td><a href="https://scholars.duke.edu/person/zhuoqun.wang">TA Zhuoqun (Carol) Wang</a> <a href="mailto:zhuoqun.wang@duke.edu" title="email"><i class="fa fa-envelope"></i></a>  </td>
-<td>TBD</td>
-<td> Old Chemistry</td>  
+<td><a href="https://stat.duke.edu/people/isaac-lavine">TA Isaac
+Lavine</a>
+<a href="mailto:isaac.lavinei@duke.edu" title="email"><i class="fa fa-envelope"></i></a>
+ </td>
+<td>Monday 9:00-10:00am and 2:00-3:00pm</td>
+<td>203B Old Chemistry</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="materials" class="section level3">
 <h3>Materials</h3>
-<p>You should have access to a laptop and bring it to every class, fully charged. Texts and readings will be assigned as needed. The instructor and TA’s will support computation in R/RStudio.</p>
+<p>You should have access to a laptop and bring it to every class, fully
+charged. Texts and readings will be assigned as needed. The instructor
+and TA’s will support computation in R/RStudio.</p>
 <p>Helpful resource materials for the course include the following.</p>
 <ul>
 <li><p>Hoff, CSSS - Statistics 560 Lecture notes (Sakai)</p></li>
-<li><p><a href="https://www.amazon.com/Analysis-Regression-Multilevel-Hierarchical-Models/dp/052168689X">Gelman and Hill, Data Analysis Using Regression and Multilevel/Hierarchical Models</a></p></li>
+<li><p><a
+href="https://www.amazon.com/Analysis-Regression-Multilevel-Hierarchical-Models/dp/052168689X">Gelman
+and Hill, Data Analysis Using Regression and Multilevel/Hierarchical
+Models</a></p></li>
 </ul>
 </div>
 <div id="topics-and-important-dates" class="section level3">
 <h3>Topics and Important Dates</h3>
-<p>STA 610 contains a mixture of lecture, lab, and combination sessions at the usual class and lab times. Frequent mini-assessments will be provided in class and lab to check mastery and identify areas for additional focus.</p>
-<p>Note: this schedule is approximate and is likely to be modified as the course progresses. Some lab sessions will be swapped with lectures due to instructor travel or course timing. Assignments are due at the beginning of class unless otherwise specified.</p>
-<table style="width:76%;">
+<p>STA 410/610 contain a mixture of lecture, lab, and combination
+sessions at the usual class and lab times. Frequent mini-assessments
+will be provided in class and lab to check mastery and identify areas
+for additional focus.</p>
+<p>Note: this schedule is approximate and is likely to be modified as
+the course progresses. Some lab sessions will be swapped with lectures
+due to instructor travel or course timing. Assignments are due at the
+beginning of class unless otherwise specified.</p>
+<table>
 <colgroup>
-<col width="15%" />
-<col width="38%" />
-<col width="22%" />
+<col width="19%" />
+<col width="51%" />
+<col width="28%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -434,122 +439,122 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>August 29</td>
+<td>August 26</td>
 <td>Welcome and Introductions</td>
 <td>ANOVA warm-up (in class)</td>
 </tr>
 <tr class="even">
-<td>August 31</td>
+<td>August 28</td>
 <td>One Way ANOVA: Scalar and Matrix Formulations</td>
 <td>Getting to Know You Sheet</td>
 </tr>
 <tr class="odd">
-<td>September 2</td>
+<td>August 30</td>
 <td>MLE’s, Contrasts, Coding Schemes, and Interaction</td>
 <td>Scientific Writing: ANOVA Results (in class)</td>
 </tr>
 <tr class="even">
-<td>September 5</td>
+<td>September 2</td>
 <td>Lab: Hands-on with ANOVA</td>
 <td>Group Lab Reports</td>
 </tr>
 <tr class="odd">
-<td>September 7</td>
+<td>September 4</td>
 <td>Random Effects ANOVA</td>
 <td>Group Policies Document Due</td>
 </tr>
 <tr class="even">
-<td>September 9</td>
+<td>September 6</td>
 <td>Random Effects ANOVA</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>September 12</td>
+<td>September 9</td>
 <td>Bayesian Estimation</td>
 <td>Assignment 1 Due</td>
 </tr>
 <tr class="even">
-<td>September 14</td>
+<td>September 11</td>
 <td>Lab: Gibbs Sampling</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>September 16</td>
+<td>September 13</td>
 <td>Bayesian Estimation</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>September 19</td>
+<td>September 16</td>
 <td>Lab: Visualizing Estimates</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>September 21</td>
+<td>September 18</td>
 <td>Random Effects ANCOVA</td>
 <td>Second lab report due</td>
 </tr>
 <tr class="even">
-<td>September 23</td>
+<td>September 20</td>
 <td>Higher Level Multi-Level Models and Case Study 1 Introduction</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>September 26</td>
+<td>September 23</td>
 <td>Lab: Gibbs Sampling</td>
 <td>Assignment 2 Due</td>
 </tr>
 <tr class="even">
-<td>September 28</td>
+<td>September 25</td>
 <td>Exam Review</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>September 30</td>
+<td>September 27</td>
 <td>Exam 1 (in class)</td>
 <td>Exam 1 (in class)</td>
 </tr>
 <tr class="even">
-<td>October 3</td>
+<td>September 30</td>
 <td>Lab: Group Work on Case Study 1</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>October 5</td>
+<td>October 2</td>
 <td>Linear Mixed Effects Models</td>
 <td>Exam 1 Returned (my deliverable)</td>
 </tr>
 <tr class="even">
-<td>October 7</td>
+<td>October 4</td>
 <td>Lab: Help, I’m Behind! Hands-on Analysis and Q&amp;A</td>
 <td>Midsemester Grades Due (my deliverable)</td>
 </tr>
 <tr class="odd">
-<td>October 10</td>
+<td>October 7</td>
 <td>Fall break</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>October 12</td>
+<td>October 9</td>
 <td>Diagnostics and Influence Measures</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>October 14</td>
+<td>October 11</td>
 <td>Bayesian Linear Mixed Effects Model for Longitudinal Data</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>October 17</td>
+<td>October 14</td>
 <td>Lab: Longitudinal Data</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>October 19</td>
+<td>October 16</td>
 <td>Generalized Linear Mixed Effects Models</td>
 <td>HW3 Released</td>
 </tr>
 <tr class="even">
-<td>October 21</td>
+<td>October 18</td>
 <td>GLMM + 2 Case Study Presentations</td>
 <td>Case Study 1 Due, Group Lab Reports</td>
 </tr>
@@ -559,12 +564,12 @@ div.tocify {
 <td></td>
 </tr>
 <tr class="even">
-<td>October 24</td>
+<td>October 23</td>
 <td>4 Case Study Presentations</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>October 26</td>
+<td>October 25</td>
 <td>4 Case Study Presentations, GLM</td>
 <td>Reproducibility Evaluations Due</td>
 </tr>
@@ -574,12 +579,12 @@ div.tocify {
 <td>Assignment 3 Due</td>
 </tr>
 <tr class="odd">
-<td>October 31</td>
+<td>October 30</td>
 <td>Crossed/Non-Nested Random Effects, Case Study 2 Introduction</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>November 2</td>
+<td>November 1</td>
 <td>Application: Election Prediction</td>
 <td></td>
 </tr>
@@ -589,12 +594,12 @@ div.tocify {
 <td></td>
 </tr>
 <tr class="even">
-<td>November 7</td>
+<td>November 6</td>
 <td>Measurement Error</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>November 9</td>
+<td>November 8</td>
 <td>Missing Data</td>
 <td></td>
 </tr>
@@ -604,12 +609,12 @@ div.tocify {
 <td></td>
 </tr>
 <tr class="odd">
-<td>November 14</td>
+<td>November 13</td>
 <td>Application: Meta Analysis</td>
 <td>Group Lab Reports</td>
 </tr>
 <tr class="even">
-<td>November 16</td>
+<td>November 15</td>
 <td>Multilevel Categorical Outcomes</td>
 <td></td>
 </tr>
@@ -619,12 +624,12 @@ div.tocify {
 <td>Assignment 4 Due (9am)</td>
 </tr>
 <tr class="even">
-<td>November 21</td>
+<td>November 20</td>
 <td>Lab: Exam Review</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>November 23</td>
+<td>November 22</td>
 <td>Assignment 4 Presentations</td>
 <td></td>
 </tr>
@@ -633,9 +638,23 @@ div.tocify {
 <td>Exam 2 (in class)</td>
 <td>Exam 2 (in class)</td>
 </tr>
+<tr class="odd">
+<td>December 2</td>
+<td>Make-Up Day (exam/assignment replacement opportunity)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>December 4</td>
+<td>5 Case Study 2 Presentations</td>
+<td>Case Study 2 Due (8 AM NOT AT CLASS TIME!)</td>
+</tr>
+<tr class="odd">
+<td>December 6</td>
+<td>5 Case Study 2 Presentations</td>
+<td></td>
+</tr>
 </tbody>
 </table>
-</div>
 </div>
 
 
@@ -649,7 +668,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -667,7 +686,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -676,6 +695,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
@@ -688,7 +710,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

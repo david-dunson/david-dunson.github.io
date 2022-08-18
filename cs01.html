@@ -11,7 +11,7 @@
 
 
 
-<title>Group dynamics</title>
+<title>Case Study 1: Birth Weight</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -346,92 +346,70 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Group dynamics</h1>
+<h1 class="title toc-ignore">Case Study 1: Birth Weight</h1>
 
 </div>
 
 
-<div id="policies" class="section level3">
-<h3>Policies</h3>
-<p>Your group has a number of responsibilities for problem and project
-assignments, described below.</p>
+<div id="learning-objectives" class="section level1">
+<h1>Learning Objectives</h1>
 <ul>
-<li>Designate a coordinator, recorder, reproducibility checker, and
-monitor/reviewer for each assignment. These should vary so that each
-group member takes a different role on a new assignment. For 5-person
-teams, split the roles of reviewer and monitor.</li>
-<li>Agree on meeting times in advance and on what each member should
-have complete before the meetings (readings, initial analysis, coding,
-etc.).</li>
-<li>Do the required individual preparation.</li>
-<li>Coordinator sends reminder before meeting that includes meeting
-location, time, and individual preparation assignments</li>
-<li>Meet and work. Coordinator keeps everyone on task and makes sure
-everyone is involved, recorder prepares final solution to be turned in,
-monitor makes sure everyone understands the solution, including the
-coding, the checker double-checks the work for reproducibility (and
-errors!), and the reviewer is responsible for (1) sharing comments on
-the graded project (and interim submissions) with the team (2) leading a
-discussion about them, with a focus on how to improve moving forward,
-and (3) reviewing effort apportionment in a constructive conversation
-with the team.</li>
-<li>Checker turns in assignment, which also indicates which student took
-on each role in the first bullet point.</li>
-<li>All team members complete written evaluations of effort put forth by
-other team members.</li>
-<li>Reviewer coordinates review of returned assignments.</li>
+<li>practice model building and validation</li>
+<li>explore use of robust regression methods to accommodate outliers and
+extreme events</li>
+<li>use causal inference methods to evaluate potential policy
+interventions</li>
 </ul>
 </div>
-<div id="team-expectations-agreement" class="section level3">
-<h3>Team expectations agreement</h3>
-<p>On a single sheet of paper, list the names of all group members along
-with a list of expectations the team wishes to adopt. Suggestions are
-below, but you can add or subtract any items as needed. Each member
-should sign the sheet and turn it in on class September 4.</p>
-<p>Potential expectations include the following (not an exhaustive
-list!):</p>
+<div id="case-study-goals" class="section level1">
+<h1>Case Study Goals</h1>
 <ul>
-<li>Make a serious effort at assigned work before meetings</li>
-<li>Make sure anyone who misses a meeting for a good cause gets caught
-up on progress</li>
-<li>Attend meetings</li>
-<li>Show up on time and stay for full meeting</li>
-<li>Notify project coordinator as soon as possible if unable to attend a
-meeting or fulfill a responsibility</li>
-<li>Listen thoughtfully to all team members</li>
-<li>Follow up promptly on assigned tasks</li>
-<li>Complete high quality work</li>
-<li>Discuss team-related issues frankly and honestly with the group</li>
-<li>Occasionally bring cookies or donuts to meetings</li>
-<li>Never bring smelly food to meetings</li>
-<li>Skype into meetings if you are sick rather than communicating a
-communicable disease</li>
-<li>You get the picture!</li>
+<li>determine which factors are associated with birth weight and
+characterize the relationship between each factor and birth weight</li>
+<li>explore whether fit of a linear regression model is adequate or
+whether robust regression methods are needed</li>
+<li>estimate the impact of eliminating maternal smoking on birth weight
+in a population</li>
 </ul>
-<p><tiny> Group policies adapted from Felder and Brent, 2000 </tiny></p>
 </div>
-<div id="group-evaluations" class="section level3">
-<h3>Group evaluations</h3>
-<p>After each group activity (lab report or case study), each group
-member will provide the following on Sakai.</p>
-<ol style="list-style-type: decimal">
-<li>A list of all other team members (not including you) and considering
-all the work on the assignment that was not done by you, a breakdown of
-the fraction of work done by each other team member. For example, if you
-are on a 4 person team and the other team members all contributed
-equally, you’d assign the fraction 1/3 to each of them (regardless of
-whether you all did 1/4 of the work overall, or whether you personally
-did half the work and the others each did 1/6).</li>
-<li>In the case you feel one or more team members deserves a different
-grade on the assignment than the others, you’ll provide a description of
-why that member or members deserves a different grade. (In this case you
-can talk about your own relative contribution.)</li>
-</ol>
-<p>A concern or complaint of unequal division of labor within a group
-that is not accompanied by group evaluations indicating this will
-generally not be entertained.</p>
-<p>At any time a group can request a meeting with the instructor to
-discuss group dynamics or other challenges.</p>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<ul>
+<li>The data for this case study cannot be shared beyond class
+participants. Please see Sakai for the data and related documentation,
+and do not disseminate the data any further.</li>
+</ul>
+</div>
+<div id="reports" class="section level1">
+<h1>Reports</h1>
+<ul>
+<li><p>Interim report (9/7): produce a 5 page (maximum) report using R
+markdown that clearly describes your process for model selection and
+validation. Provide clear interpretations of the associations between
+each predictor and birth weight in layperson’s language, including
+characterization of uncertainty. Figures may be included as appropriate.
+Code should be fully reproducible.</p></li>
+<li><p>Final report (9/14): produce a 5 page (maximum) report using R
+markdown that addresses the potential impact of eliminating smoking on
+birth weight in the population. Clearly describe your modeling approach
+and any assumptions required to produce estimates (including uncertainty
+characterization). Figures should be included. Code should be fully
+reproducible.</p></li>
+</ul>
+</div>
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<p>An Introduction to Statistical Learning with Applications in R, James
+et al (2013), Chapter 5: Resampling Methods (free e-book through Duke
+Libraries)</p>
+</div>
+<div id="slides" class="section level1">
+<h1>Slides</h1>
+<p><a href="decks/cs01_1_deck.html">Birth weight data</a></p>
+<p><a href="decks/cs01_3_deck.html">Regression and model
+validation</a></p>
+<p><a href="decks/cs01_4_deck.html">Introduction to causal
+inference</a></p>
 </div>
 
 

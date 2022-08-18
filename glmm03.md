@@ -1,0 +1,51 @@
+Generalized Linear Mixed Effects Model
+================
+
+# Topics of Interest
+
+-   Framework of the generalized linear mixed effects model
+
+-   Complex random effects structures
+
+-   Missing data
+
+# Resources
+
+-   Hoff Chapter 7
+
+-   Gelman and Hill Chapters 14-15
+
+[Hospital data](https://github.com/donnemartin/hospital-quality)
+
+[More on hospital compare
+data](https://rpubs.com/D_Cypher/BestHospitals)
+
+# Slides
+
+[Generalized Linear Mixed Effects Model](decks/glmm_01_deck.html)
+
+[Nested and Crossed Random Effects](decks/glmm_02_deck.html)
+
+[Case Study: Polls and Election Prediction](decks/glmm_03_deck.html)
+
+[Measurement Error](decks/glmm_04_deck.html)
+
+[Missing Data](decks/glmm_05_deck.html)
+
+[Meta-Analysis](decks/glmm_06_deck.html)
+
+[Multilevel Categorical Data](decks/glmm_07_deck.html)
+
+# Homework
+
+[Homework 3](homework/hw3.html)
+
+[Homework 4](homework/hw4.html)
+
+# Labs
+
+[October 14](labs/lab3.html)
+
+[October 21](labs/lab4.html)
+
+[November 4](labs/lab5.html)

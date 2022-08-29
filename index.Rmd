@@ -14,7 +14,7 @@ markup: "mmark"
 
 
 
-#Welcome to STA610
+## Welcome to STA610
 
 ### Class Meetings
 

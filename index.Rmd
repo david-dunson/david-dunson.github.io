@@ -31,8 +31,8 @@ Note: office hours may vary due to travel and other commitments. Revisions to of
 | Team member | Office hours | Location |
 | ----------  | -------------------------------------         | ---- |
 | [Professor David Dunson](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:dunson@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | M/W 3-3:30pm | 218 Old Chemistry |
- [TA Patrick LeBlanc](https://stat.duke.edu/people/isaac-lavine)  <a href="mailto:patrick.leblanc@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | TBD | Old Chemistry
- [TA Zhuoqun (Carol) Wang ](https://stat.duke.edu/people/xu-chen)  <a href="mailto:zhuoqun.wang@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Th 3:30-5pm | Old Chemistry 022
+ [TA Patrick LeBlanc](https://stat.duke.edu/people/isaac-lavine)  <a href="mailto:patrick.leblanc@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | 1-3pm Tuesday | 203B Old Chemistry
+ [TA Zhuoqun (Carol) Wang ](https://stat.duke.edu/people/xu-chen)  <a href="mailto:zhuoqun.wang@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Thursday 3:30-5pm | Old Chemistry 022
                   
 
 

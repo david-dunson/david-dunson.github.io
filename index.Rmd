@@ -20,7 +20,7 @@ markup: "mmark"
 
 <font color="#6CA0DC"><i class="fas fa-university fa-lg"></i></font> &nbsp; Old Chem 116
 
-<font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font> &nbsp; MWF 11:45 - 1:00 (Fridays are lab sessions taught by TAs)
+<font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font> &nbsp; MWF 1:45 - 3:00pm (Fridays are lab sessions taught by TAs)
 
 
 ### Teaching team and office hours 

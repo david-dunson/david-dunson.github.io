@@ -20,7 +20,7 @@ markup: "mmark"
 
 <font color="#6CA0DC"><i class="fas fa-university fa-lg"></i></font> &nbsp; Old Chem 116
 
-<font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font> &nbsp; MWF 11:45 - 1:00 (usually Mondays will be labs)
+<font color="#6CA0DC"><i class="fas fa-calendar-alt fa-lg"></i></font> &nbsp; MWF 11:45 - 1:00 (Fridays are lab sessions taught by TAs)
 
 
 ### Teaching team and office hours 
@@ -30,10 +30,9 @@ Note: office hours may vary due to travel and other commitments. Revisions to of
 
 | Team member | Office hours | Location |
 | ----------  | -------------------------------------         | ---- |
-| [Professor David Dunson](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:dunson@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | 218 Old Chemistry |
- [TA Shounak Chattapadhyay](https://stat.duke.edu/people/xu-chen)  <a href="mailto:shounak.chattopadhyay@duke.edu, " title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | Old Chemistry
+| [Professor David Dunson](https://stat.duke.edu/people/amy-h-herring)  <a href="mailto:dunson@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | M/W 3-3:30pm | 218 Old Chemistry |
  [TA Patrick LeBlanc](https://stat.duke.edu/people/isaac-lavine)  <a href="mailto:patrick.leblanc@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp; | TBD | Old Chemistry
- [TA Zhuoqun (Cathy) Wang ](https://stat.duke.edu/people/xu-chen)  <a href="mailto:zhuoqun.wang@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | TBD | Old Chemistry
+ [TA Zhuoqun (Carol) Wang ](https://stat.duke.edu/people/xu-chen)  <a href="mailto:zhuoqun.wang@duke.edu" title="email"><i class="fa fa-envelope"></i></a> &nbsp;  | Th 3:30-5pm | Old Chemistry 022
                   
 
 
@@ -50,56 +49,55 @@ Helpful resource materials for the course include the following.
 
 ### Topics and Important Dates
 
-STA 410/610 contain a mixture of lecture, lab, and combination sessions at the usual class and lab times. Frequent mini-assessments will be provided in class and lab to check mastery and identify areas for additional focus.
+STA 610 contain a mixture of lecture and lab sessions. Mini-assessments will be provided in lab to check mastery and identify areas for additional focus.
 
-Note: this schedule is approximate and is likely to be modified as the course progresses. Some lab sessions will be swapped with lectures due to instructor travel or course timing. Assignments are due at the beginning of class unless otherwise specified. 
+Note: this schedule is approximate and is likely to be modified as the course progresses. Assignments are due at the beginning of class unless otherwise specified. 
 
 
 
 |Date           |Topic                      |Deliverables     |
 | ----------    | ---------------------------         | --------------- |
 | August 29     | Welcome and Introductions        | ANOVA warm-up (in class)        |
-| August 21     | One Way ANOVA: Scalar and Matrix Formulations    |   Getting to Know You Sheet              |
-| September 2     |  MLE's, Contrasts, Coding Schemes, and Interaction      |    Scientific Writing: ANOVA Results (in class)     |
-| September 5    |  Lab: Hands-on with ANOVA     |  Group Lab Reports      |
-| September 7   | Random Effects ANOVA | Group Policies Document Due |
-| September 9   | Random Effects ANOVA|  |
-| September 12  | Bayesian Estimation | Assignment 1 Due  |
-| September 14  | Lab: Gibbs Sampling  |    |
-| September 16  |Bayesian Estimation |  |
-| September 19  | Lab: Visualizing Estimates |    |
-| September 21  | Random Effects ANCOVA | Second lab report due  |
-| September 23  | Higher Level Multi-Level Models and Case Study 1 Introduction |   |
-| September 26  | Lab: Gibbs Sampling | Assignment 2 Due  |
-| September 28  | Exam Review |  |
-| September 30  | Exam 1 (in class)  | Exam 1 (in class) |
-| October 3  |  Lab: Group Work on Case Study 1        |   |
-| October 5     | Linear Mixed Effects Models | Exam 1 Returned (my deliverable)  | 
-| October 7     | Lab: Help, I'm Behind! Hands-on Analysis and Q&A | Midsemester Grades Due (my deliverable)  |
+| August 31     | One Way ANOVA: Scalar and Matrix Formulations    |                 |
+| September 2    |  Lab: Hands-on with ANOVA     |        |
+| September 5     |  MLE's, Contrasts, Coding Schemes, and Interaction      |    Scientific Writing: ANOVA Results (in class)     |
+| September 7   | Random Effects ANOVA |  |
+| September 9  | ANOVA Lab #2 | Assignment 1 (ANOVA) Due |
+| September 12   | Random Effects ANOVA (continued) |  |
+| September 14  | Bayesian Estimation |  |
+| September 16  | Lab: Gibbs Sampling  |    |
+| September 19  | Bayesian Estimation (continued)  |    |
+| September 21  | Random Effects ANCOVA |   |
+| September 23  | Lab: Visualizing Estimates | Assignment 2 (ANOVA) Due |
+| September 26  | Higher Level Multi-Level Models and Case Study 1 Introduction |    |
+| September 28  |  Linear Mixed Effects Models - Intro |   |
+| September 30  | Lab: Case Study 1  |  |
+| October 3  | Exam 1 (in class)  | Exam 1 (in class) |
+| October 5     | Linear Mixed Effects Models - Continued |   | 
+| October 7     | Lab: Help, I'm Behind! Hands-on Analysis and Q&A | Case Study 1 Write-up Due |
 | October 10    | Fall break  |  |
 | October 12    |  Diagnostics and Influence Measures |  |
-| October 14    | Bayesian Linear Mixed Effects Model for Longitudinal Data |   |
-| October 17    | Lab: Longitudinal Data |   |
-| October 19    | Generalized Linear Mixed Effects Models | HW3 Released |
-| October 21    | GLMM + 2 Case Study Presentations |  Case Study 1 Due, Group Lab Reports |
-| October 24    | Lab |   | 
-| October 26    | 4 Case Study Presentations |  |
-| October 28    | 4 Case Study Presentations, GLM  | Reproducibility Evaluations Due  | 
-| October 31    | Lab: Hierarchical Centering | Assignment 3 Due  | 
-| November 2    | Crossed/Non-Nested Random Effects, Case Study 2 Introduction  |    |
-| November 4    | Application: Election Prediction |  |
-| November 7    | Lab: Who Votes? |   | 
-| November 9    | Measurement Error |  |
-| November 11    | Missing Data  |  |
-| November 14   | Lab: Who Votes? |   |
-| November 16   | Application: Meta Analysis | Group Lab Reports |
-| November 18   | Multilevel Categorical Outcomes |  |
-| November 21   | Assignment 4 Presentations | Assignment 4 Due (9am)  |
+| October 14    | Lab: Longitudinal Data |   |
+| October 17    | Bayesian Linear Mixed Effects Model for Longitudinal Data |   |
+| October 19    | Generalized Linear Mixed Effects Models (GLMMs) |  |
+| October 21    | Lab: Implementing Bayesian GLMMs in R-Stan | Assignment 3 (GLMM) Due  | 
+| October 24    | GLMMs - continued | |
+| October 26    | Some applications and extensions of GLMMs |  |
+| October 28    | Lab: Hierarchical Centering |  | | Reproducibility Evaluations Due  | 
+| October 31    | Crossed/Non-Nested Random Effects, Case Study 2 Introduction |   | 
+| November 2    | Application: Election Prediction  |    |
+| November 4    | Lab: Who Votes? | Assignment 4 (GLMM) Due  | 
+| November 7    | Measurement Error  | |
+| November 9    | Missing Data |  |
+| November 11    | Lab: Missing data exercise  |  |
+| November 14   | Kernels/splines and inducing non-linearity |   |
+| November 16   | Application: Meta Analysis |  |
+| November 18   | Lab: Capturing non-linearities |  |
+| November 21   | Multilevel Categorical Outcomes | Case Study 2 Write-up Due  |
 | November 23   | Thanksgiving break |
 | November 25   | Thanksgiving break |
-| November 28   | Lab: Exam Review |  | 
-| November 30   | Assignment 4 Presentations |  |
-| November 25   | Exam 2 (in class) | Exam 2 (in class) |
-| December 2    | Make-Up Day (exam/assignment replacement opportunity) |  |
+| November 28   | Exam Review |  | 
+| November 30   | Exam 2 (in class) | Exam 2 (in class) |
+| December 2    | Lab: Make up day + misc help |  |
 
 
